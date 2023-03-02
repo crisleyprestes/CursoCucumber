@@ -6,7 +6,6 @@ import br.com.linhares.crisley.servicos.AluguelService;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
-import gherkin.lexer.Ca;
 import org.junit.Assert;
 
 import java.util.Calendar;
@@ -17,6 +16,7 @@ public class AlugarFilmeSteps {
     private Filme filme;
     private AluguelService aluguel = new AluguelService();
     private NotaAluguel nota;
+    private String erro;
 
     @Dado("^um filme com estoque de (\\d+) unidades$")
     public void umFilmeComEstoqueDeUnidades(int estoque) {
@@ -31,7 +31,12 @@ public class AlugarFilmeSteps {
 
     @Quando("^alugar$")
     public void alugar() {
-        nota = aluguel.alugar(filme);
+        try {
+            nota = aluguel.alugar(filme);
+        } catch (RuntimeException e){
+            erro = e.getMessage();
+        }
+
     }
 
     @Então("^o preço do aluguel será R\\$ (\\d+)$")
@@ -56,5 +61,10 @@ public class AlugarFilmeSteps {
     @Então("^o estoque do filme será (\\d+) unidade$")
     public void oEstoqueDoFilmeSeráUnidade(int estoque) {
         Assert.assertEquals(estoque, filme.getEstoque());
+    }
+
+    @Então("^não será possível por falta de estoque$")
+    public void nãoSeráPossívelPorFaltaDeEstoque() {
+        Assert.assertEquals("Filme sem estoque!", erro);
     }
 }
