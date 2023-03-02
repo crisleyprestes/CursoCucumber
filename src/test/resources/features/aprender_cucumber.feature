@@ -1,5 +1,6 @@
 # language: pt
 
+@esse
 Funcionalidade: Aprender Cucumber
   Como um aluno
   Eu quero aprender a utilizar o Cucumber
@@ -15,16 +16,19 @@ Funcionalidade: Aprender Cucumber
     Quando eu incrementar em 3
     Então o valor do contador será 18
 
+  @Tipo1
   Cenário: Deve incrementar contador
     Dado que o valor do contador é 123
     Quando eu incrementar em 35
     Então o valor do contador será 158
 
+  @Tipo2
   Cenário: Deve calcular atraso no prazo de entrega
     Dado que o prazo de entrega é 05/04/2018
     Quando a entrega atrasar em 2 dias
     Então a entrega será efetuada em 07/04/2018
 
+  @Tipo1 @Tipo2
   Cenário: Deve calcular atraso no prazo de entrega da China
     Dado que o prazo de entrega é 05/04/2018
     Quando a entrega atrasar em 2 meses
@@ -45,10 +49,11 @@ Funcionalidade: Aprender Cucumber
     E que o nome do passageiro é "Cicrano de Oliveira"
     Dado que o telefone do passageiro é 9888-8888
 
-  # Cenário: Deve negar todos os steps "Dado" dos cenários anteriores
-  #  Dado que o ticket é CD123
-  #  E que o ticket é AG1234
-  #  E que o valor da passagem é R$ 1.1345,56
-  #  E que o nome do passageiro é "Beltrano Souza Matos de Alcântara Azevedo"
-  #  E que o telefone do passageiro é 1234-5678
-  #  E que o telefone do passageiro é 999-2223
+  @Ignore
+  Cenário: Deve negar todos os steps "Dado" dos cenários anteriores
+    Dado que o ticket é CD123
+    E que o ticket é AG1234
+    E que o valor da passagem é R$ 1.1345,56
+    E que o nome do passageiro é "Beltrano Souza Matos de Alcântara Azevedo"
+    E que o telefone do passageiro é 1234-5678
+    E que o telefone do passageiro é 999-2223

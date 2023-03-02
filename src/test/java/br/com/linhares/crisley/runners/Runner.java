@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/features/aprender_cucumber.feature"},
         glue = {"br.com.linhares.crisley.steps"},
+        tags = {"@Tipo1, @Tipo2"},
         plugin = "pretty",
         monochrome = true,
         snippets = SnippetType.CAMELCASE,
