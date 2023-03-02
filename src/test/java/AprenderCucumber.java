@@ -1,4 +1,5 @@
 import cucumber.api.PendingException;
+import cucumber.api.Transform;
 import cucumber.api.java.ca.Cal;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
@@ -43,13 +44,9 @@ public class AprenderCucumber {
 
     Date entrega = new Date();
 
-    @Dado("^que o prazo de entrega é (\\d+)/(\\d+)/(\\d+)$")
-    public void queOPrazoDeEntregaÉ(int dia, int mes, int ano) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.DAY_OF_MONTH, dia);
-        calendar.set(Calendar.MONTH, mes - 1);
-        calendar.set(Calendar.YEAR, ano);
-        entrega = calendar.getTime();
+    @Dado("^que o prazo de entrega é (.*)$")
+    public void queOPrazoDeEntregaÉ(@Transform(DateConverter.class) Date data) {
+        entrega = data;
     }
 
     @Quando("^a entrega atrasar em (\\d+) (dia|dias|mês|meses)$")
@@ -77,8 +74,8 @@ public class AprenderCucumber {
         
     }
 
-    @Dado("^que o valor da passagem é R\\$ (\\d+),(\\d+)$")
-    public void queOValorDaPassagemÉR$(int reais, int centavos) {
+    @Dado("^que o valor da passagem é R\\$ (.*)$")
+    public void queOValorDaPassagemÉR$(Double valor) {
         
     }
 
