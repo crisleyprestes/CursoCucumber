@@ -1,6 +1,7 @@
-import cucumber.api.PendingException;
+package br.com.linhares.crisley.steps;
+
+import br.com.linhares.crisley.converters.DateConverter;
 import cucumber.api.Transform;
-import cucumber.api.java.ca.Cal;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -11,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AprenderCucumber {
+public class AprenderCucumberSteps {
 
     @Dado("^que criei o arquivo corretamente$")
     public void queCrieiOArquivoCorretamente() {
