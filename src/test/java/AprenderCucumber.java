@@ -1,3 +1,4 @@
+import cucumber.api.PendingException;
 import cucumber.api.java.ca.Cal;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
@@ -69,5 +70,33 @@ public class AprenderCucumber {
         DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         String dataFormatada = format.format(entrega);
         Assert.assertEquals(data, dataFormatada);
+    }
+
+    @Dado("^que o ticket( especial)? é (A.\\d{3})$")
+    public void queOTicketÉAF(String tipo, String codigo) {
+        
+    }
+
+    @Dado("^que o valor da passagem é R\\$ (\\d+),(\\d+)$")
+    public void queOValorDaPassagemÉR$(int reais, int centavos) {
+        
+    }
+
+    @Dado("^que o nome do passageiro é \"(.{5,20})\"$")
+    public void queONomeDoPassageiroÉ(String nome) throws Throwable {
+    }
+
+    @Dado("^que o telefone do passageiro é (9\\d{3}-\\d{4})$")
+    public void queOTelefoneDoPassageiroÉ(String telefone) {
+        
+    }
+
+    @Quando("^criar os steps$")
+    public void criarOsSteps() {
+        
+    }
+
+    @Então("^o teste vai funcionar$")
+    public void oTesteVaiFuncionar() {
     }
 }
