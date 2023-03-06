@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/features/alugar_filme.feature"},
         glue = {"br.com.linhares.crisley.steps"},
         tags = {},
-        plugin = "pretty",
+        plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
         monochrome = true,
         snippets = SnippetType.CAMELCASE,
         dryRun = false,
