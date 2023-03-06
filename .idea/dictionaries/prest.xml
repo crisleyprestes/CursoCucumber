@@ -2,12 +2,15 @@
   <dictionary name="prest">
     <words>
       <w>aceitação</w>
+      <w>acessando</w>
+      <w>adicionar</w>
       <w>alcântara</w>
       <w>alugar</w>
       <w>alugueis</w>
       <w>aluguel</w>
       <w>aluno</w>
       <w>anteriores</w>
+      <w>aplicação</w>
       <w>aprender</w>
       <w>arquivo</w>
       <w>atrasar</w>
@@ -31,6 +34,8 @@
       <w>criei</w>
       <w>critérios</w>
       <w>datas</w>
+      <w>dinheiro</w>
+      <w>distribuir</w>
       <w>efetuada</w>
       <w>entrega</w>
       <w>então</w>
@@ -39,23 +44,31 @@
       <w>esquema</w>
       <w>esse</w>
       <w>estoque</w>
+      <w>estou</w>
       <w>executar</w>
       <w>executá</w>
       <w>exemplos</w>
+      <w>existente</w>
       <w>extendida</w>
       <w>extendido</w>
       <w>falta</w>
       <w>filme</w>
       <w>filmes</w>
       <w>finalizar</w>
+      <w>forma</w>
       <w>fulano</w>
       <w>funcionalidade</w>
       <w>funcionar</w>
       <w>genéricos</w>
+      <w>gostaria</w>
       <w>incrementar</w>
+      <w>informo</w>
+      <w>inserida</w>
       <w>locadora</w>
       <w>matos</w>
       <w>meses</w>
+      <w>notificado</w>
+      <w>organizada</w>
       <w>passageiro</w>
       <w>passagem</w>
       <w>passos</w>
@@ -67,12 +80,14 @@
       <w>prazo</w>
       <w>preço</w>
       <w>preços</w>
+      <w>página</w>
       <w>quando</w>
       <w>quero</w>
       <w>reaproveitar</w>
       <w>recebida</w>
       <w>seguinte</w>
       <w>seja</w>
+      <w>seleciono</w>
       <w>semanal</w>
       <w>será</w>
       <w>telefone</w>
@@ -80,6 +95,7 @@
       <w>unidades</w>
       <w>usuário</w>
       <w>utilizar</w>
+      <w>visualizo</w>
     </words>
   </dictionary>
 </component>

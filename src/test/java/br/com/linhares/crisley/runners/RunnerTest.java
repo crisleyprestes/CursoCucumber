@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/alugar_filme.feature"},
+        features = {"src/test/resources/features/inserir_conta.feature"},
         glue = {"br.com.linhares.crisley.steps"},
-        tags = {},
+        tags = {"~@Ignore"},
         plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
         monochrome = false,
         snippets = SnippetType.CAMELCASE,
