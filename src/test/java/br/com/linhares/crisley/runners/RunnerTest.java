@@ -11,10 +11,10 @@ import org.junit.runner.RunWith;
         glue = {"br.com.linhares.crisley.steps"},
         tags = {},
         plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
-        monochrome = true,
+        monochrome = false,
         snippets = SnippetType.CAMELCASE,
         dryRun = false,
         strict = false
         )
-public class Runner {
+public class RunnerTest {
 }
