@@ -5,6 +5,7 @@ import br.com.linhares.crisley.entidades.NotaAluguel;
 import br.com.linhares.crisley.entidades.TipoAlugel;
 import br.com.linhares.crisley.servicos.AluguelService;
 import br.com.linhares.crisley.utils.DateUtils;
+import cucumber.api.DataTable;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -13,6 +14,7 @@ import org.junit.Assert;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 public class AlugarFilmeSteps {
 
@@ -20,7 +22,7 @@ public class AlugarFilmeSteps {
     private AluguelService aluguel = new AluguelService();
     private NotaAluguel nota;
     private String erro;
-    private TipoAlugel tipoAlugel = TipoAlugel.COMUM;
+    private TipoAlugel tipoAlugel;
 
     @Dado("^um filme com estoque de (\\d+) unidades$")
     public void umFilmeComEstoqueDeUnidades(int estoque) {
@@ -31,6 +33,16 @@ public class AlugarFilmeSteps {
     @Dado("^que o preço do aluguel seja R\\$ (\\d+)$")
     public void queOPreçoDoAluguelSejaR$(int preco) {
         filme.setAluguel(preco);
+    }
+
+    @Dado("^um filme$")
+    public void umFilme(DataTable table) {
+        Map<String, String> map = table.asMap(String.class, String.class);
+        filme = new Filme();
+        filme.setEstoque(Integer.parseInt(map.get("estoque")));
+        filme.setAluguel(Integer.parseInt(map.get("preço")));
+        String tipo = map.get("tipo");
+        tipoAlugel = tipo.equals("semanal")? TipoAlugel.SEMANAL: tipo.equals("extendido")? TipoAlugel.EXTENDIDO: TipoAlugel.COMUM;
     }
 
     @Quando("^alugar$")
