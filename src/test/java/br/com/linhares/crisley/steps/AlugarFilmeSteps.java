@@ -2,6 +2,7 @@ package br.com.linhares.crisley.steps;
 
 import br.com.linhares.crisley.entidades.Filme;
 import br.com.linhares.crisley.entidades.NotaAluguel;
+import br.com.linhares.crisley.entidades.TipoAlugel;
 import br.com.linhares.crisley.servicos.AluguelService;
 import br.com.linhares.crisley.utils.DateUtils;
 import cucumber.api.java.pt.Dado;
@@ -11,7 +12,6 @@ import org.junit.Assert;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 public class AlugarFilmeSteps {
@@ -20,7 +20,7 @@ public class AlugarFilmeSteps {
     private AluguelService aluguel = new AluguelService();
     private NotaAluguel nota;
     private String erro;
-    private String tipoAlugel;
+    private TipoAlugel tipoAlugel = TipoAlugel.COMUM;
 
     @Dado("^um filme com estoque de (\\d+) unidades$")
     public void umFilmeComEstoqueDeUnidades(int estoque) {
@@ -60,7 +60,7 @@ public class AlugarFilmeSteps {
 
     @Dado("^que o tipo do aluguel seja (.*)$")
     public void queOTipoDoAluguelSeja(String tipo) {
-        tipoAlugel = tipo;
+        tipoAlugel = tipo.equals("semanal")? TipoAlugel.SEMANAL: tipo.equals("extendido")? TipoAlugel.EXTENDIDO: TipoAlugel.COMUM;
     }
 
     @Então("^a data de entrega será em (\\d+) dias?$")
