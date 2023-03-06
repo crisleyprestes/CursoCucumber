@@ -17,7 +17,6 @@
     E seleciono Salvar
     Então a conta é inserida com sucesso
 
-  @Ignore
   Cenário: Não deve inserir uma conta sem nome
     Dado que estou acessando a aplicação
     Quando informo o usuário "crisley@mail.com"
@@ -29,7 +28,6 @@
     E seleciono Salvar
     Então sou notificado que o nome da conta é obrigatório
 
-  @Ignore
   Cenário: Não deve inserir uma conta com nome já existente
     Dado que estou acessando a aplicação
     Quando informo o usuário "crisley@mail.com"
