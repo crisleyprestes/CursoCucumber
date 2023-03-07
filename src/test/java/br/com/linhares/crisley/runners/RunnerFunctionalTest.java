@@ -12,16 +12,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/inserir_conta.feature"},
+        features = {"src/test/resources/features/"},
         glue = {"br.com.linhares.crisley.steps"},
-        tags = {"~@Ignore"},
+        tags = {"@Funcionais", "~@Ignore"},
         plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
         monochrome = false,
         snippets = SnippetType.CAMELCASE,
         dryRun = false,
         strict = false
         )
-public class RunnerTest {
+public class RunnerFunctionalTest {
 
         @BeforeClass
         public static void resetarBanco(){

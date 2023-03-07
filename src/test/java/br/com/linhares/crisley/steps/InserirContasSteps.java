@@ -74,7 +74,7 @@ public class InserirContasSteps {
         Assert.assertEquals(mensagem, driver.findElement(By.cssSelector("div[class*='alert']")).getText());
     }
 
-    @After(order = 1)
+    @After(order = 1, value = {"@Funcionais"})
     public void takeScreenshot(Scenario cenario){
         File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try {
@@ -84,7 +84,7 @@ public class InserirContasSteps {
         }
     }
 
-    @After(order = 0)
+    @After(order = 0, value = {"@Funcionais"})
     public void fecharBrowser(){
         driver.quit();
     }
