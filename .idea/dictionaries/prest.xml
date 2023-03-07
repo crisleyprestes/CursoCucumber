@@ -34,6 +34,7 @@
       <w>criei</w>
       <w>critérios</w>
       <w>datas</w>
+      <w>desejo</w>
       <w>dinheiro</w>
       <w>distribuir</w>
       <w>efetuada</w>
@@ -66,6 +67,7 @@
       <w>informo</w>
       <w>inserida</w>
       <w>locadora</w>
+      <w>logado</w>
       <w>matos</w>
       <w>meses</w>
       <w>notificado</w>
@@ -100,6 +102,7 @@
       <w>usuário</w>
       <w>utilizar</w>
       <w>visualizo</w>
+      <w>válida</w>
     </words>
   </dictionary>
 </component>

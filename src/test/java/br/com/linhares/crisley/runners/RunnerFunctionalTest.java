@@ -28,6 +28,7 @@ public class RunnerFunctionalTest {
                 WebDriverManager.chromedriver().setup();
                 WebDriver driver = new ChromeDriver();
                 driver.get("https://seubarriga.wcaquino.me/");
+                driver.manage().window().maximize();
                 driver.findElement(By.id("email")).sendKeys("crisley@mail.com");
                 driver.findElement(By.id("senha")).sendKeys("123456");
                 driver.findElement(By.xpath("//*[text()='Entrar']")).click();

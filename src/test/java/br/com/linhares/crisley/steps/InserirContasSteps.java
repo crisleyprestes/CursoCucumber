@@ -21,52 +21,36 @@ public class InserirContasSteps {
 
     private WebDriver driver;
 
-    @Dado("^que estou acessando a aplicação$")
-    public void queEstouAcessandoAAplicação() {
+    @Dado("^que desejo adicionar uma conta$")
+    public void queDesejoAdicionarUmaConta() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://seubarriga.wcaquino.me/");
-    }
-
-    @Quando("^informo o usuário \"([^\"]*)\"$")
-    public void informoOUsuário(String usuario) {
-        driver.findElement(By.id("email")).sendKeys(usuario);
-    }
-
-    @Quando("^a senha \"([^\"]*)\"$")
-    public void aSenha(String senha) {
-        driver.findElement(By.id("senha")).sendKeys(senha);
-    }
-
-    @Quando("^seleciono entrar$")
-    public void selecionoEntrar() {
+        driver.manage().window().maximize();
+        driver.findElement(By.id("email")).sendKeys("crisley@mail.com");
+        driver.findElement(By.id("senha")).sendKeys("123456");
         driver.findElement(By.xpath("//*[text()='Entrar']")).click();
-    }
-
-    @Então("^visualizo a página inicial$")
-    public void visualizoAPáginaInicial() {
-        Assert.assertEquals("Bem vindo, Crisley Linhares!",
-                driver.findElement(By.cssSelector("div[class*='alert-success']")).getText());
-    }
-
-    @Quando("^seleciono Contas$")
-    public void selecionoContas() {
+        driver.findElement(By.cssSelector("div[class*='alert-success']")).isDisplayed();
         driver.findElement(By.xpath("//*[contains(text(), 'Contas')]")).click();
-    }
-
-    @Quando("^seleciono Adicionar$")
-    public void selecionoAdicionar() {
         driver.findElement(By.xpath("//*[text()='Adicionar']")).click();
     }
 
-    @Quando("^informo a conta \"([^\"]*)\"$")
-    public void informoAConta(String nomeConta) {
-        driver.findElement(By.id("nome")).sendKeys(nomeConta);
+    @Quando("^adiciono uma conta válida$")
+    public void adicionoAConta() {
+        driver.findElement(By.id("nome")).sendKeys("Conta de teste");
+        driver.findElement(By.xpath("//*[text()='Salvar']")).click();
     }
 
-    @Quando("^seleciono Salvar$")
-    public void selecionoSalvar() {
+    @Quando("^adiciono a conta \"([^\"]*)\"$")
+    public void adicionoAConta(String nomeConta) {
+        driver.findElement(By.id("nome")).sendKeys(nomeConta);
         driver.findElement(By.xpath("//*[text()='Salvar']")).click();
+    }
+
+    @Então("^a conta é inserida com sucesso$")
+    public void aContaÉInseridaComSucesso() {
+        Assert.assertEquals("Conta adicionada com sucesso!",
+                driver.findElement(By.cssSelector("div[class*='alert']")).getText());
     }
 
     @Então("^recebo a mensagem \"([^\"]*)\"$")

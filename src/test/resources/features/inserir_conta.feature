@@ -7,17 +7,10 @@
     Para que eu possa distribuir meu dinheiro de uma forma mais organizada
 
   Contexto:
-    Dado que estou acessando a aplicação
-    Quando informo o usuário "crisley@mail.com"
-    E a senha "123456"
-    E seleciono entrar
-    Então visualizo a página inicial
-    Quando seleciono Contas
-    E seleciono Adicionar
+    Dado que desejo adicionar uma conta
 
   Esquema do Cenário: Deve validar as regras de cadastro de uma conta
-    Quando informo a conta "<conta>"
-    E seleciono Salvar
+    Quando adiciono a conta "<conta>"
     Então recebo a mensagem "<mensagem>"
 
     Exemplos:
@@ -25,3 +18,7 @@
     | Conta de Teste   | Conta adicionada com sucesso!      |
     |                  | Informe o nome da conta            |
     | Conta mesmo nome | Já existe uma conta com esse nome! |
+
+  Cenário: Deve inserir uma conta com sucesso
+    Quando adiciono uma conta válida
+    Então a conta é inserida com sucesso
