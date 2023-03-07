@@ -1,10 +1,8 @@
 package br.com.linhares.crisley.steps;
 
-import br.com.linhares.crisley.converters.DateConverter;
-import cucumber.api.Transform;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Então;
-import cucumber.api.java.pt.Quando;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
 
 import java.text.DateFormat;
@@ -45,8 +43,8 @@ public class AprenderCucumberSteps {
 
     Date entrega = new Date();
 
-    @Dado("^que o prazo de entrega é (.*)$")
-    public void queOPrazoDeEntregaÉ(@Transform(DateConverter.class) Date data) {
+    @Dado("que o prazo de entrega é {data}")
+    public void queOPrazoDeEntregaÉ(Date data) {
         entrega = data;
     }
 

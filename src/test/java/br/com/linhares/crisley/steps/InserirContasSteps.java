@@ -1,10 +1,10 @@
 package br.com.linhares.crisley.steps;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Então;
-import cucumber.api.java.pt.Quando;
+import io.cucumber.core.api.Scenario;
+import io.cucumber.java.After;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
@@ -58,17 +58,17 @@ public class InserirContasSteps {
         Assert.assertEquals(mensagem, driver.findElement(By.cssSelector("div[class*='alert']")).getText());
     }
 
-    @After(order = 1, value = {"@Funcionais"})
+    @After(order = 1, value = "@Funcionais")
     public void takeScreenshot(Scenario cenario){
         File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(file, new File("target/screenshots/" + cenario.getId() + ".jpg"));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
-    @After(order = 0, value = {"@Funcionais"})
+    @After(order = 0, value = "@Funcionais")
     public void fecharBrowser(){
         driver.quit();
     }

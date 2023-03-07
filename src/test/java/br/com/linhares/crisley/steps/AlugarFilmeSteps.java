@@ -5,10 +5,11 @@ import br.com.linhares.crisley.entidades.NotaAluguel;
 import br.com.linhares.crisley.entidades.TipoAlugel;
 import br.com.linhares.crisley.servicos.AluguelService;
 import br.com.linhares.crisley.utils.DateUtils;
-import cucumber.api.DataTable;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Então;
-import cucumber.api.java.pt.Quando;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
 
 import java.text.DateFormat;
