@@ -62,22 +62,9 @@ public class InserirContasSteps {
         driver.findElement(By.xpath("//*[text()='Salvar']")).click();
     }
 
-    @Então("^a conta é inserida com sucesso$")
-    public void aContaÉInseridaComSucesso() {
-        Assert.assertEquals("Conta adicionada com sucesso!",
-                driver.findElement(By.cssSelector("div[class*='alert-success']")).getText());
-    }
-
-    @Então("^sou notificado que o nome da conta é obrigatório$")
-    public void souNotificadoQueONomeDaContaÉObrigatório() {
-        Assert.assertEquals("Informe o nome da conta", 
-                driver.findElement(By.cssSelector("div[class*='alert-danger']")).getText());
-    }
-
-    @Então("^sou notificado que já existe uma conta com esse nome$")
-    public void souNotificadoQueJáExisteUmaContaComEsseNome() {
-        Assert.assertEquals("Já existe uma conta com esse nome!",
-                driver.findElement(By.cssSelector("div[class*='alert-danger']")).getText());
+    @Então("^recebo a mensagem \"([^\"]*)\"$")
+    public void receboA(String mensagem) {
+        Assert.assertEquals(mensagem, driver.findElement(By.cssSelector("div[class*='alert']")).getText());
     }
 
     @After
