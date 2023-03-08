@@ -62,7 +62,7 @@ public class InserirContasSteps {
     public void takeScreenshot(Scenario cenario){
         File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file, new File("target/screenshots/" + cenario.getId() + ".jpg"));
+            FileUtils.copyFile(file, new File("target/screenshots/" + cenario.getName() + ".jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
