@@ -1,6 +1,6 @@
 # Project exclude paths
 /target/
 vcs.xml
-/.idea
+/.idea/
 .classpath
-/.project
+.project
